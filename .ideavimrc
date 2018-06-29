@@ -1,0 +1,45 @@
+set ignorecase
+set showmode
+
+" copy to clipboard by default
+set clipboard+=unnamed
+
+" paste without yank
+vnoremap p "_dP
+
+set surround
+
+"Definition list (aka outline view in eclipse, file strucuture in intellij ide)
+nmap <Leader>d  :action FileStructurePopup<CR>
+
+"Find usages, also called find references
+nmap <Leader>g :action FindUsages<CR>
+
+" Parameter hInts.
+imap <Leader>i <C-O>:action ParameterInfo<CR>
+nmap <Leader>i :action ParameterInfo<CR>
+
+" Refactor
+imap <Leader>r <Esc>:action RenameElement<CR>
+nmap <Leader>r :action RenameElement<CR>
+map <Leader>R :action Refactorings.QuickListPopupAction<CR>
+
+"Saving file
+nmap <Leader>s :action SaveAll<CR>
+
+"rebase
+nmap <Leader>b :action Git.Rebase<CR>
+
+nmap <Leader>t :action GotoImplementation<CR>
+map <leader>x :action Debug<CR>
+map <leader>X :action ChooseDebugConfiguration<CR>
+
+map <Leader>u :action SurroundWith<CR>
+
+"git
+map <Leader>Gr :action Git.Rebase<CR>
+map <Leader>Gc :action Git.Add<CR>
+
+map <Leader>a :action LookupActions
+
+set visualbell
