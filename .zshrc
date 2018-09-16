@@ -59,8 +59,6 @@ ZSH_THEME="mh"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  zsh-syntax-highlighting
-  z
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -101,7 +99,7 @@ bindkey -v
 bindkey '^R' history-incremental-pattern-search-backward
 
 setopt NO_BEEP
-
+setopt nobgnice
 choco(){
    choco.exe $*
 }
@@ -123,3 +121,5 @@ y(){
 p(){
   cp /tmp/copy/* .
 }
+. ~/.oh-my-zsh/z/z.sh
+source /home/jaseem/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
