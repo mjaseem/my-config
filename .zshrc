@@ -123,3 +123,25 @@ p(){
 }
 . ~/.oh-my-zsh/z/z.sh
 source /home/jaseem/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+function mv() {
+  if [ "$#" -ne 1 ] || [ ! -f "$1" ]; then
+    command mv "$@"
+    return
+  fi
+
+  newfilename="$1"
+  vared newfilename
+  command mv -v -- "$1" "$newfilename"
+}
+
+function cp() {
+  if [ "$#" -ne 1 ] || [ ! -f "$1" ]; then
+    command cp "$@"
+    return
+  fi
+
+  newfilename="$1"
+  vared newfilename
+  command cp -v -- "$1" "$newfilename"
+}
